@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assests/logo.png">
+  <title>TECHOPEDIA LVL 14</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="text-gray-100">
+  <!-- Navbar -->
+  <nav class="weathered-metal battle-worn sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <!-- Left: Logo -->
+        <div class="flex items-center space-x-4">
+          <div class="military-badge w-12 h-12 flex items-center justify-center">
+            <i class="fas fa-star text-yellow-300 text-xl"></i>
+          </div>
+          <span class="military-stencil text-xl text-yellow-300">
+            TECHOPEDIA TRINITY VEIL
+          </span>
+        </div>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex space-x-6">
+          <a href="#home" class="military-stencil text-sm hover:text-yellow-300 transition-colors text-[14px]">HOME</a>
+          <a href="#events"
+            class="military-stencil text-sm hover:text-yellow-300 transition-colors text-[14px]">EVENTS</a>
+          <a href="#timeline"
+            class="military-stencil text-sm hover:text-yellow-300 transition-colors text-[14px]">TIMELINE</a>
+          <a href="#sponsors"
+            class="military-stencil text-sm hover:text-yellow-300 transition-colors text-[14px]">SPONSORS</a>
+          <a href="#faq" class="military-stencil text-sm hover:text-yellow-300 transition-colors text-[14px]">FAQ</a>
+        </div>
+
+        <!-- Desktop Registration -->
+        <a href="#events" class="military-button px-4 py-2 text-sm inline-flex items-center hidden md:inline-flex">
+          <i class="fas fa-user-plus mr-1"></i>REGISTRATION
+        </a>
+
+
+
+        <!-- Mobile toggle -->
+        <button id="menu-toggle" class="md:hidden text-yellow-300 text-2xl p-2" aria-controls="mobile-menu"
+          aria-expanded="false">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur px-4 pb-4 border-t border-gray-800">
+      <a href="#home" class="block py-2 military-stencil text-yellow-300 hover:text-white">HOME</a>
+      <a href="#events" class="block py-2 military-stencil text-yellow-300 hover:text-white">EVENTS</a>
+      <a href="#timeline" class="block py-2 military-stencil text-yellow-300 hover:text-white">TIMELINE</a>
+      <a href="#sponsors" class="block py-2 military-stencil text-yellow-300 hover:text-white">SPONSORS</a>
+      <a href="#faq" class="block py-2 military-stencil text-yellow-300 hover:text-white">FAQ</a>
+      <a href="#events" class="military-button px-4 py-2 text-sm inline-flex items-center">
+        <a href="#events" class="military-button px-4 py-2 text-sm inline-flex items-center md:hidden">
+          <i class="fas fa-user-plus mr-1"></i>REGISTRATION
+        </a>
+
+    </div>
+  </nav>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (!toggleBtn || !mobileMenu) return;
+
+      const setExpanded = (open) => {
+        toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+        const icon = toggleBtn.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-bars', !open);
+          icon.classList.toggle('fa-times', open);
+        }
+
+        mobileMenu.classList.toggle('hidden', !open);
+
+        document.documentElement.classList.toggle('overflow-hidden', open);
+      };
+
+
+      setExpanded(false);
+
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+        setExpanded(!isOpen);
+      });
+
+
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) setExpanded(false);
+      });
+
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setExpanded(false);
+      });
+    });
+  </script>
+
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen camouflage-pattern battle-worn military-grid relative flex items-center">
+    <div class="absolute top-10 right-10 document-stamp military-stencil text-sm">
+      RESTRICTED
+    </div>
+    <div class="max-w-7xl mx-auto px-4 py-20 text-center">
+      <div class="vintage-paper battle-worn p-12 rounded-lg shadow-2xl max-w-4xl mx-auto">
+        <div class="flex justify-center mb-8">
+          <div class="military-badge w-32 h-32 flex items-center justify-center">
+            <i class="fas fa-microchip text-6xl" style="color: var(--military-green);"></i>
+          </div>
+        </div>
+
+        <h1 class="military-stencil text-6xl mb-6" style="color: var(--military-green);">
+          TECHOPEDIA LVL 14
+        </h1>
+        <h2 class="military-stencil text-3xl mb-8" style="color: var(--army-brown);">
+          TRINITY VEIL:THE FINAL CONFLUENCE
+        </h2>
+        <p class="fade-text">Declassified: The Technology That Changed History</p>
+        <p class="text-lg mb-12 leading-relaxed" style="color: var(--army-brown);">
+          Join us for an unprecedented exploration of World War II's technological breakthroughs.
+          From radar systems to early computing machines, discover how innovation under pressure
+          shaped our modern world. This classified briefing reveals the untold stories of
+          wartime engineering and scientific advancement.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="#events" target="_blank"
+            class="military-button px-8 py-4 text-xl rounded-lg inline-flex items-center">
+            <i class="fas fa-rocket mr-3"></i> Join The Mission
+          </a>
+          <a href="#timeline" class="military-button px-8 py-4 text-xl rounded-lg inline-flex items-center">
+            <i class="fas fa-file-alt mr-3"></i> View Intel
+          </a>
+        </div>
+        <div class="radio-static absolute bottom-0 left-0 right-0 h-2"></div>
+  </section>
+
+<!-- Events Section -->
+<section id="events" class="min-h-screen camouflage-pattern battle-worn military-grid relative flex items-center">
+  <div class="max-w-7xl mx-auto mt-8 px-4">
+    <div class="text-center mb-16">
+      <h2 class="military-stencil text-5xl mb-4" style="color: var(--military-green);">
+        Mission Briefings
+      </h2>
+      <p class="text-xl" style="color: var(--army-brown);">Strategic Operations Schedule</p>
+    </div>
+
+    <!-- Change grid to 2 columns for 4 events -->
+    <div class="grid md:grid-cols-2 gap-8">
+      
+     <!-- Event 1 -->
+<div class="weathered-metal battle-worn p-8 rounded-lg shadow-xl max-w-md mx-auto">
+  <div class="military-badge w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+    <i class="fas fa-satellite text-2xl text-yellow-300"></i>
+  </div>
+  <h3 class="military-stencil text-2xl mb-4 text-center text-yellow-300">INQUISITIVE</h3>
+  <p class="text-gray-300 mb-6 leading-relaxed">
+    Step into the Signal Room as a cryptographer. Intercept enemy transmissions and solve wartime ciphers.
+  </p>
+  <div class="border-t border-gray-600 pt-4 mb-6">
+    <p class="text-sm text-gray-400"><i class="fas fa-calendar mr-2"></i>Day 1 - 0900 Hours</p>
+    <p class="text-sm text-gray-400"><i class="fas fa-clock mr-2"></i>90 Minutes</p>
+  </div>
+  <details class="w-full">
+    <summary
+      class="military-button flex w-full px-4 py-3 rounded bg-green-700 cursor-pointer hover:bg-green-800 transition-colors">
+      <i class="fas fa-eye mr-2"></i>View Details
+    </summary>
+
+    <div class="mt-4 bg-gray-800 p-6 rounded-lg text-gray-200">
+      <h4 class="text-xl text-yellow-300 font-semibold mb-2">Event 1 – The Signal Room</h4>
+      <p><strong>Role:</strong> Newly assigned cryptographers in a fortified communications bunker.</p>
+      <p><strong>Briefing:</strong> “You are the unseen front line. Every cipher you break, every signal you
+        intercept, is another step toward saving our forces. Fail — and they walk blind into the enemy’s guns.”
+      </p>
+      <p><strong>Objective:</strong> Crack intercepted enemy transmissions before they can be acted upon.</p>
+      <p><strong>Task:</strong> Solve logic puzzles, wartime ciphers, and code-breaking challenges under time
+        pressure.</p>
+      <p><strong>Outcome:</strong></p>
+      <ul class="list-disc list-inside">
+        <li>Correct solutions reveal cipher fragments — numbers, symbols, words.</li>
+        <li>The final puzzle points to the movement of a mysterious classified cargo through hostile territory.</li>
+        <li>This decoded intel becomes the mission map for Event 2.</li>
+      </ul>
+    </div>
+  </details>
+
+  <button
+    class="propaganda-style w-full px-4 py-3 rounded military-stencil bg-yellow-700 hover:bg-yellow-800 transition-colors mt-4">
+    <i class="fas fa-user-plus mr-2"></i>Register
+  </button>
+</div>
+
+          <!-- Event 2 -->
+        <div class="weathered-metal battle-worn p-8 rounded-lg shadow-xl max-w-md mx-auto">
+          <div class="military-badge w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-route text-2xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-2xl mb-4 text-center text-yellow-300">SQUABBLE</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Take on the role of diplomatic operatives securing safe passage for the cargo decoded in Event 1. Negotiate,
+            strategize, and protect the shipment.
+          </p>
+          <div class="border-t border-gray-600 pt-4 mb-6">
+            <p class="text-sm text-gray-400"><i class="fas fa-calendar mr-2"></i>Day 2 - 1000 Hours</p>
+            <p cla ss="text-sm text-gray-400"><i class="fas fa-clock mr-2"></i>120 Minutes</p>
+          </div>
+          <details class="mb-4">
+            <summary
+              class="military-button flex w-full px-4 py-3 rounded bg-green-700 cursor-pointer hover:bg-green-800 transition-colors">
+              <i class="fas fa-eye mr-2"></i>View Details
+            </summary>
+
+            <div class="mt-4 bg-gray-800 p-6 rounded-lg text-gray-200">
+              <h4 class="text-xl text-yellow-300 font-semibold mb-2">Event 2 – The Iron Route</h4>
+              <p><strong>Role:</strong> Diplomatic operatives securing safe passage for the “cargo” decoded in Event 1.
+              </p>
+              <p><strong>Briefing:</strong> “You must ensure the package’s delivery. No one must suspect its true
+                nature. You will bargain, lie, or sacrifice — whatever is needed to clear its path.”</p>
+              <p><strong>Objective:</strong> Protect the shipment without revealing its existence to neutral or hostile
+                powers.</p>
+              <p><strong>Task:</strong> Debate strategic routes, broker ceasefires, and negotiate alliances — each
+                choice affects risk, time, and secrecy.</p>
+              <p><strong>Outcome:</strong></p>
+              <ul class="list-disc list-inside">
+                <li>The chosen route is recorded in the mission log.</li>
+                <li>Intercepted messages from Event 1 resurface mid-negotiation, hinting at deeper connections.</li>
+                <li>The signed route agreement becomes part of the “technical delivery packet” for Event 3.</li>
+              </ul>
+            </div>
+          </details>
+          <!-- Register Button -->
+          <button
+            class="propaganda-style w-full px-4 py-3 rounded military-stencil bg-yellow-700 hover:bg-yellow-800 transition-colors">
+            <i class="fas fa-user-plus mr-2"></i>Register
+          </button>
+
+        </div>
+
+        <!-- Event 3 -->
+        <div class="weathered-metal battle-worn p-8 rounded-lg shadow-xl max-w-md mx-auto">
+          <div class="military-badge w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-tools text-2xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-2xl mb-4 text-center text-yellow-300">TBD</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Take command as military engineers securing and containing the cargo from Event 2. Precision and care are
+            essential.
+          </p>
+          <div class="border-t border-gray-600 pt-4 mb-6">
+            <p class="text-sm text-gray-400"><i class="fas fa-calendar mr-2"></i>Day 3 - 1200 Hours</p>
+            <p class="text-sm text-gray-400"><i class="fas fa-clock mr-2"></i>150 Minutes</p>
+          </div>
+          <details class="mb-4">
+            <summary
+              class="military-button flex w-full px-4 py-3 rounded bg-green-700 cursor-pointer hover:bg-green-800 transition-colors">
+              <i class="fas fa-eye mr-2"></i>View Details
+            </summary>
+
+            <div class="mt-4 bg-gray-800 p-6 rounded-lg text-gray-200">
+              <h4 class="text-xl text-yellow-300 font-semibold mb-2">Event 3 – The Black Forge</h4>
+              <p><strong>Role:</strong> Military engineers tasked with securing and containing the “cargo” from Event 2.
+              </p>
+              <p><strong>Briefing:</strong> “The enemy compound you now hold is unstable. Mishandle it, and it will
+                destroy you. Secure it to Command’s exact specifications — there can be no mistakes.”</p>
+              <p><strong>Objective:</strong> Design a containment casing for an unstable, classified payload.</p>
+              <p><strong>Task:</strong> Using provided materials, sketches, or models, build a casing that matches
+                strict “classified technical specs” — secretly embedding cipher patterns from Event 1 and coordinates
+                from Event 2.</p>
+              <p><strong>Outcome:</strong></p>
+              <ul class="list-disc list-inside">
+                <li>Completed design is approved by High Command.</li>
+                <li>A technician quietly remarks: “Do you even know what you’ve made?”</li>
+                <li>First real hint that the events are connected.</li>
+              </ul>
+            </div>
+          </details>
+          <button
+            class="propaganda-style w-full px-4 py-3 rounded military-stencil bg-yellow-700 hover:bg-yellow-800 transition-colors">
+            <i class="fas fa-user-plus mr-2"></i>Register
+          </button>
+
+        </div>
+        <!-- Event 4 -->
+        <div class="weathered-metal battle-worn p-8 rounded-lg shadow-xl max-w-md mx-auto">
+          <div class="military-badge w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-balance-scale text-2xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-2xl mb-4 text-center text-yellow-300">Grand Reveal</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Gather at the secure war council as the true consequences of your previous missions are revealed. Your moral
+            choice will shape the outcome of the conflict.
+          </p>
+          <div class="border-t border-gray-600 pt-4 mb-6">
+            <p class="text-sm text-gray-400"><i class="fas fa-calendar mr-2"></i>Day 4 - 1300 Hours</p>
+            <p class="text-sm text-gray-400"><i class="fas fa-clock mr-2"></i>90 Minutes</p>
+          </div>
+          <details class="mb-4">
+            <summary
+              class="military-button flex w-full px-4 py-3 rounded bg-green-700 cursor-pointer hover:bg-green-800 transition-colors">
+              <i class="fas fa-eye mr-2"></i>View Details
+            </summary>
+
+            <div class="mt-4 bg-gray-800 p-6 rounded-lg text-gray-200">
+              <h4 class="text-xl text-yellow-300 font-semibold mb-2">Event 4 – The Convergence Briefing</h4>
+              <p><strong>Setting:</strong> A secure underground war council. Lights dim. A single projector illuminates
+                the table.</p>
+              <p><strong>Reveals:</strong></p>
+              <ul class="list-disc list-inside">
+                <li>Cipher fragments from Event 1 were the targeting coordinates.</li>
+                <li>Route choices from Event 2 ensured the payload arrived at the strike zone.</li>
+                <li>Casing design from Event 3 was the warhead housing itself.</li>
+              </ul>
+              <p><strong>Truth:</strong> You have unknowingly built the deployment system for a weapon capable of ending
+                the war in a single strike — but at the cost of annihilating an entire city.</p>
+              <p><strong>Final Decision:</strong></p>
+              <ul class="list-disc list-inside">
+                <li>Strike immediately — ending the war but killing thousands.</li>
+                <li>Delay — risking the war dragging on, with unknown losses.</li>
+                <li>Sabotage — rendering the weapon unusable.</li>
+                <li>Redirect — fire into an uninhabited zone as a warning shot.</li>
+              </ul>
+            </div>
+          </details>
+          <button
+            class="propaganda-style w-full px-4 py-3 rounded military-stencil bg-yellow-700 hover:bg-yellow-800 transition-colors">
+            <i class="fas fa-user-plus mr-2"></i>Register
+          </button>
+
+        </div>
+
+    </div>
+  </div>
+</section>
+  <!-- Timeline Section -->
+  <section id="timeline" class="min-h-screen camouflage-pattern battle-worn military-grid relative flex items-center">
+    <div class="max-w-7xl mx-auto px-4 mt-16">
+      <div class="text-center mb-16">
+        <h2 class="military-stencil text-5xl mb-4 mt-1 text-yellow-300">
+          Event Timeline
+        </h2>
+        <p class="text-xl text-gray-300">Chronological Schedule of Activities</p>
+      </div>
+
+      <div class="relative timeline-connector">
+        <!-- Timeline Item 1: Registration Start -->
+        <div class="mb-12 flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+            <div class="vintage-paper battle-worn p-6 rounded-lg shadow-xl">
+              <div class="flex items-center mb-4">
+                <div class="military-badge w-12 h-12 flex items-center justify-center mr-4">
+                  <i class="fas fa-calendar-plus text-lg" style="color: var(--military-green);"></i>
+                </div>
+                <h3 class="military-stencil text-xl" style="color: var(--military-green);">Day 1 - Registration Opens
+                </h3>
+              </div>
+              <p style="color: var(--field-gray);">
+                Registration officially begins. Participants can sign up and collect event materials.
+                Make sure to arrive on time to secure your spot.
+              </p>
+            </div>
+          </div>
+          <div class="hidden md:block w-8 h-8 military-badge border-4 border-yellow-300"></div>
+          <div class="md:w-1/2"></div>
+        </div>
+
+        <!-- Timeline Item 2: Inauguration & Fun -->
+        <div class="mb-12 flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2"></div>
+          <div class="hidden md:block w-8 h-8 military-badge border-4 border-yellow-300"></div>
+          <div class="md:w-1/2 md:pl-8 mb-4 md:mb-0">
+            <div class="vintage-paper battle-worn p-6 rounded-lg shadow-xl">
+              <div class="flex items-center mb-4">
+                <div class="military-badge w-12 h-12 flex items-center justify-center mr-4">
+                  <i class="fas fa-flag text-lg" style="color: var(--military-green);"></i>
+                </div>
+                <h3 class="military-stencil text-xl" style="color: var(--military-green);">Day 1 - Inauguration & Fun
+                  Activities</h3>
+              </div>
+              <p style="color: var(--field-gray);">
+                Kick-off ceremony with welcoming speeches, flag hoisting, and light-hearted fun events
+                to energize participants and set the stage for the main events.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3: Main Events & Announcements -->
+        <div class="mb-12 flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+            <div class="vintage-paper battle-worn p-6 rounded-lg shadow-xl">
+              <div class="flex items-center mb-4">
+                <div class="military-badge w-12 h-12 flex items-center justify-center mr-4">
+                  <i class="fas fa-bullhorn text-lg" style="color: var(--military-green);"></i>
+                </div>
+                <h3 class="military-stencil text-xl" style="color: var(--military-green);">Day 2 - Events &
+                  Announcements</h3>
+              </div>
+              <p style="color: var(--field-gray);">
+                Main competitions and activities take place. Official announcements and updates
+                regarding winners, progress, and schedule changes are communicated to all participants.
+              </p>
+            </div>
+          </div>
+          <div class="hidden md:block w-8 h-8 military-badge border-4 border-yellow-300"></div>
+          <div class="md:w-1/2"></div>
+        </div>
+
+        <!-- Timeline Item 4: Closing Ceremony -->
+        <div class="mb-12 flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2"></div>
+          <div class="hidden md:block w-8 h-8 military-badge border-4 border-yellow-300"></div>
+          <div class="md:w-1/2 md:pl-8 mb-4 md:mb-0">
+            <div class="vintage-paper battle-worn p-6 rounded-lg shadow-xl">
+              <div class="flex items-center mb-4">
+                <div class="military-badge w-12 h-12 flex items-center justify-center mr-4">
+                  <i class="fas fa-trophy text-lg" style="color: var(--military-green);"></i>
+                </div>
+                <h3 class="military-stencil text-xl" style="color: var(--military-green);">Day 3 - Closing Ceremony</h3>
+              </div>
+              <p style="color: var(--field-gray);">
+                The event concludes with an awards ceremony, appreciation speeches, and final announcements.
+                Participants are acknowledged and the timeline for future events is shared.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Sponsors Section -->
+  <section id="sponsors" class="min-h-screen camouflage-pattern battle-worn military-grid relative flex items-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="military-stencil text-5xl mb-4" style="color: var(--military-green);">
+          Allied Command Sponsors
+        </h2>
+        <p class="text-xl" style="color: var(--army-brown);">Strategic Partners in Innovation</p>
+      </div>
+
+      <!-- Sponsors Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-12 justify-items-center">
+        <!-- Sponsor 1 -->
+        <div
+          class="weathered-metal battle-worn p-8 rounded-lg shadow-xl text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div class="military-badge w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-industry text-4xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-lg text-yellow-300">Allied Industries</h3>
+        </div>
+
+        <!-- Sponsor 2 -->
+        <div
+          class="weathered-metal battle-worn p-8 rounded-lg shadow-xl text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div class="military-badge w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-microchip text-4xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-lg text-yellow-300">Victory Tech</h3>
+        </div>
+
+        <!-- Sponsor 3 -->
+        <div
+          class="weathered-metal battle-worn p-8 rounded-lg shadow-xl text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div class="military-badge w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-satellite text-4xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-lg text-yellow-300">Radar Systems Co</h3>
+        </div>
+
+        <!-- Sponsor 4 -->
+        <div
+          class="weathered-metal battle-worn p-8 rounded-lg shadow-xl text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div class="military-badge w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-rocket text-4xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-lg text-yellow-300">Aerospace Legacy</h3>
+        </div>
+
+        <!-- Sponsor 5 -->
+        <div
+          class="weathered-metal battle-worn p-8 rounded-lg shadow-xl text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div class="military-badge w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-atom text-4xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-lg text-yellow-300">Nuclear Dynamics</h3>
+        </div>
+
+        <!-- Sponsor 6 -->
+        <div
+          class="weathered-metal battle-worn p-8 rounded-lg shadow-xl text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div class="military-badge w-24 h-24 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-ship text-4xl text-yellow-300"></i>
+          </div>
+          <h3 class="military-stencil text-lg text-yellow-300">Naval Innovation</h3>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="mt-16 text-center">
+        <div
+          class="propaganda-style p-8 rounded-lg max-w-2xl mx-auto transform transition duration-500 hover:scale-105 hover:shadow-xl">
+          <h3 class="military-stencil text-2xl mb-4">Join the Resistance!</h3>
+          <p class="mb-6">Become a strategic partner in preserving and sharing the technological legacy of World War II.
+          </p>
+          <button class="military-button px-8 py-3 rounded-lg">
+            <i class="fas fa-handshake mr-2"></i>Become a Sponsor
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+  <section id="faq" class="min-h-screen camouflage-pattern battle-worn military-grid relative flex items-center">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="text-center mb-16">
+        <h2 class="military-stencil text-5xl mb-4 text-yellow-300">
+          Intelligence Briefing
+        </h2>
+        <p class="text-xl text-green-300">Frequently Asked Questions about Operation Trinity Veil</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item bg-green-900/40 p-6 rounded-lg shadow-xl border border-yellow-400/40 backdrop-blur-sm">
+          <button class="w-full flex justify-between items-center faq-toggle">
+            <span class="military-stencil text-lg text-yellow-300">What is Operation Trinity Veil?</span>
+            <i class="fas fa-angle-down text-yellow-300 transition-transform"></i>
+          </button>
+          <p class="faq-content text-green-200 mt-3 hidden">
+            Operation Trinity Veil is a multi-stage immersive event testing logic, diplomacy, and engineering skills
+            through cryptography, strategic negotiation, and classified payload tasks. Success requires precision and
+            teamwork.
+          </p>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item bg-green-900/40 p-6 rounded-lg shadow-xl border border-yellow-400/40 backdrop-blur-sm">
+          <button class="w-full flex justify-between items-center faq-toggle">
+            <span class="military-stencil text-lg text-yellow-300">Who can participate?</span>
+            <i class="fas fa-angle-down text-yellow-300 transition-transform"></i>
+          </button>
+          <p class="faq-content text-green-200 mt-3 hidden">
+            Participants include cryptographers, strategists, engineers, and enthusiasts in logic, diplomacy, or
+            military simulation games. Each stage challenges a different skill set.
+          </p>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item bg-green-900/40 p-6 rounded-lg shadow-xl border border-yellow-400/40 backdrop-blur-sm">
+          <button class="w-full flex justify-between items-center faq-toggle">
+            <span class="military-stencil text-lg text-yellow-300">How does the event flow work?</span>
+            <i class="fas fa-angle-down text-yellow-300 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content mt-3 hidden overflow-hidden transition-all duration-500">
+            <p class="text-green-200 mb-2">
+              The event progresses through four main missions:
+            </p>
+            <ul class="list-disc list-inside text-green-300 space-y-1">
+              <li><strong>Event 1 – The Signal Room:</strong> Solve ciphers under time pressure.</li>
+              <li><strong>Event 2 – The Iron Route:</strong> Negotiate and protect decoded cargo.</li>
+              <li><strong>Event 3 – The Black Forge:</strong> Build a containment casing using secret intel.</li>
+              <li><strong>Event 4 – Convergence Briefing:</strong> Face the moral choice that affects the outcome of the
+                operation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item bg-green-900/40 p-6 rounded-lg shadow-xl border border-yellow-400/40 backdrop-blur-sm">
+          <button class="w-full flex justify-between items-center faq-toggle">
+            <span class="military-stencil text-lg text-yellow-300">What is the registration process?</span>
+            <i class="fas fa-angle-down text-yellow-300 transition-transform"></i>
+          </button>
+          <p class="faq-content text-green-200 mt-3 hidden">
+            Teams register online for each stage. Registration closes before the first event, and late entries may not
+            be accommodated. Each participant must provide a codename and skill specialization.
+          </p>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item bg-green-900/40 p-6 rounded-lg shadow-xl border border-yellow-400/40 backdrop-blur-sm">
+          <button class="w-full flex justify-between items-center faq-toggle">
+            <span class="military-stencil text-lg text-yellow-300">Is there an age or skill requirement?</span>
+            <i class="fas fa-angle-down text-yellow-300 transition-transform"></i>
+          </button>
+          <p class="faq-content text-green-200 mt-3 hidden">
+            Minimum age is 16. Prior knowledge of logic puzzles, basic cryptography, or strategy games is recommended
+            but not required. Teamwork is essential.
+          </p>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item bg-green-900/40 p-6 rounded-lg shadow-xl border border-yellow-400/40 backdrop-blur-sm">
+          <button class="w-full flex justify-between items-center faq-toggle">
+            <span class="military-stencil text-lg text-yellow-300">Will there be consequences for wrong
+              decisions?</span>
+            <i class="fas fa-angle-down text-yellow-300 transition-transform"></i>
+          </button>
+          <p class="faq-content text-green-200 mt-3 hidden">
+            Yes. Each incorrect solution or poor tactical choice influences the flow of the next event. The final moral
+            decision in Event 4 may also be affected by cumulative outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tailwind FAQ Toggle Script -->
+  <script>
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        content.classList.toggle('hidden');
+        toggle.querySelector('i').classList.toggle('rotate-180');
+      });
+    });
+  </script>
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-green-950/90 border-t border-yellow-400/30 backdrop-blur-sm pt-16" id="contact">
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10">
+
+        <!-- Logo and About -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-4 mb-6">
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full border border-yellow-400 bg-green-800/60">
+              <i class="fas fa-star text-yellow-300 text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="military-stencil text-2xl text-yellow-300">Techopedia 14</h3>
+              <p class="text-gray-400">SIG x IEEE x SIESGST</p>
+            </div>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            <b>Techopedia 14</b> is a flagship event by <b>IEEE SIESGST</b> with support from SIG and allied sponsors.
+            Continuing the legacy of wartime innovation, this year’s theme explores how technology and history
+            intersect,
+            bringing learning and inspiration together.
+          </p>
+
+          <div class="flex space-x-4">
+            <a href="#"
+              class="w-12 h-12 rounded-full flex items-center justify-center border border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-green-900 transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#"
+              class="w-12 h-12 rounded-full flex items-center justify-center border border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-green-900 transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#"
+              class="w-12 h-12 rounded-full flex items-center justify-center border border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-green-900 transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#"
+              class="w-12 h-12 rounded-full flex items-center justify-center border border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-green-900 transition">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="military-stencil text-xl text-yellow-300 mb-6">Quick Deploy</h4>
+          <ul class="space-y-3">
+            <li><a href="#home" class="text-gray-300 hover:text-yellow-300 transition">Home Base</a></li>
+            <li><a href="#events" class="text-gray-300 hover:text-yellow-300 transition">Mission Briefings</a></li>
+            <li><a href="#timeline" class="text-gray-300 hover:text-yellow-300 transition">War Timeline</a></li>
+            <li><a href="#sponsors" class="text-gray-300 hover:text-yellow-300 transition">Allied Sponsors</a></li>
+            <li><a href="#faq" class="text-gray-300 hover:text-yellow-300 transition">Intelligence Brief</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-yellow-300 transition">Contact Command</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="military-stencil text-xl text-yellow-300 mb-6">Command Center</h4>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start"><i class="fas fa-map-marker-alt mr-3 text-yellow-300"></i>
+              <span>SIES Graduate School of Technology<br>Nerul, Navi Mumbai, MH 400706</span>
+            </li>
+            <li class="flex items-center"><i class="fas fa-phone mr-3 text-yellow-300"></i>
+              <span>+91 98765 43210</span>
+            </li>
+            <li class="flex items-center"><i class="fas fa-envelope mr-3 text-yellow-300"></i>
+              <span>ieee@siesgst.ac.in</span>
+            </li>
+            <li class="flex items-center"><i class="fas fa-clock mr-3 text-yellow-300"></i>
+              <span>Active Duty: 24/7</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom -->
+      <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
+        <p class="text-gray-400 text-sm">
+          &copy; 2024 Techopedia 14 • IEEE SIESGST • All Rights Reserved
+        </p>
+        <div class="flex space-x-6 mt-4 md:mt-0 text-sm">
+          <a href="#" class="text-gray-400 hover:text-yellow-300 transition">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-yellow-300 transition">Terms of Service</a>
+          <a href="#" class="text-gray-400 hover:text-yellow-300 transition">Security Clearance</a>
+        </div>
+      </div>
+
+      <!-- Final Stamp -->
+      <div class="text-center mt-8">
+        <span class="military-stencil border border-yellow-400 px-4 py-2 rounded text-yellow-300">
+          DECLASSIFIED FOR PUBLIC EDUCATION
+        </span>
+      </div>
+    </div>
+
+  </footer>
